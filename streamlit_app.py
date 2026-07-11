@@ -235,7 +235,7 @@ else:
     title = f"{choice} — output lost (%)"
 
 df = expand_to_iso(econ_vals, mapmeta)
-st.plotly_chart(choropleth(df, title), width="stretch")
+st.plotly_chart(choropleth(df, title))
 
 # ---- Most-exposed economies + sector drill-down ----
 left, right = st.columns(2)
