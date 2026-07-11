@@ -1,0 +1,7 @@
+[theme]
+base = "light"
+primaryColor = "#c0392b"
+
+[server]
+# The Zenodo cache download + a solve can take a little while on first use.
+maxUploadSize = 5

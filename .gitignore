@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+
+# Local model cache / run outputs (fetched at runtime; never committed)
+model_cache_2019/
+*.tar.gz
