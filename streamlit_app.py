@@ -27,7 +27,7 @@ from maritime_choke import solver_backend as sb
 from maritime_choke import data as mc_data
 
 st.set_page_config(
-    page_title="Maritime chokepoint disruption",
+    page_title="Macroeconomic Risks from Maritime Trade Disruptions",
     page_icon="🚢",
     layout="wide",
 )
@@ -110,11 +110,12 @@ def choropleth(df: pd.DataFrame, title: str):
 # --------------------------------------------------------------------------- #
 # UI                                                                           #
 # --------------------------------------------------------------------------- #
-st.title("🚢 Maritime chokepoint disruption")
+st.title("🚢 Macroeconomic Risks from Maritime Trade Disruptions")
+st.markdown("##### Vipin P. Veetil · Fathimath S. Vemmarath")
 st.caption(
-    "Close any set of the 12 major shipping chokepoints, pick a "
-    "(τ, ρ, ϱ, δ) calibration, and solve the short-run production-network "
-    "model forward. Model & data: the "
+    "An interactive companion to the paper — close any set of the 12 major "
+    "shipping chokepoints, pick a (τ, ρ, ϱ, δ) calibration, and solve the "
+    "short-run production-network model forward. Model & data: the "
     "[`maritime-choke`](https://pypi.org/project/maritime-choke/) package."
 )
 

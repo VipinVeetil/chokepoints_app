@@ -1,13 +1,14 @@
-# Maritime chokepoint disruption — Streamlit app
+# Macroeconomic Risks from Maritime Trade Disruptions
 
-An interactive Streamlit front end for the short-run production-network model of
-**maritime-chokepoint trade disruptions**. Close any set of the world's 12 major
-shipping chokepoints, pick a `(τ, ρ, ϱ, δ)` calibration, and solve the model
-forward — then explore where the value-added loss falls on a world choropleth,
-by country, and by sector.
+**Vipin P. Veetil · Fathimath S. Vemmarath**
 
-Based on *Macroeconomic Risks from Maritime Trade Disruptions* (Vemmarath &
-Veetil). The model and its benchmark data are the published
+An interactive Streamlit companion to the paper *Macroeconomic Risks from
+Maritime Trade Disruptions*. Close any set of the world's 12 major shipping
+chokepoints, pick a `(τ, ρ, ϱ, δ)` calibration, and solve the short-run
+production-network model forward — then explore where the value-added loss falls
+on a world choropleth, by country, and by sector.
+
+The model and its benchmark data are the published
 [`maritime-choke`](https://pypi.org/project/maritime-choke/) package; this repo
 is only the Streamlit UI.
 
