@@ -2,8 +2,10 @@
 
 **Vipin P. Veetil · Fathimath S. Vemmarath**
 
-An interactive Streamlit companion to the paper *Macroeconomic Risks from
-Maritime Trade Disruptions*. Close any set of the world's 12 major shipping
+📄 **Paper:** [Macroeconomic Risks from Maritime Trade Disruptions](https://arxiv.org/abs/2607.09951) · [arXiv:2607.09951](https://arxiv.org/abs/2607.09951)
+
+An interactive Streamlit companion to the paper *[Macroeconomic Risks from
+Maritime Trade Disruptions](https://arxiv.org/abs/2607.09951)*. Close any set of the world's 12 major shipping
 chokepoints, pick a `(τ, ρ, ϱ, δ)` calibration, and solve the short-run
 production-network model forward — then explore where the value-added loss falls
 on a world choropleth, by country, and by sector.

@@ -7,6 +7,9 @@ chokepoints, pick a (tau, rho, varrho, delta) calibration, and the model is
 solved forward; the world value-added loss is shown on a choropleth, by
 country, and by sector.
 
+Companion to the paper "Macroeconomic Risks from Maritime Trade Disruptions"
+(Veetil & Vemmarath), https://arxiv.org/abs/2607.09951.
+
 The model and its data are the published `maritime-choke` package
 (https://pypi.org/project/maritime-choke/): on first launch it downloads the
 ~90 MB benchmark cache from Zenodo (DOI 10.5281/zenodo.21263267), then every
@@ -113,9 +116,10 @@ def choropleth(df: pd.DataFrame, title: str):
 st.title("🚢 Macroeconomic Risks from Maritime Trade Disruptions")
 st.markdown("##### Vipin P. Veetil · Fathimath S. Vemmarath")
 st.caption(
-    "An interactive companion to the paper — close any set of the 12 major "
-    "shipping chokepoints, pick a (τ, ρ, ϱ, δ) calibration, and solve the "
-    "short-run production-network model forward. Model & data: the "
+    "An interactive companion to [the paper](https://arxiv.org/abs/2607.09951) — "
+    "close any set of the 12 major shipping chokepoints, pick a (τ, ρ, ϱ, δ) "
+    "calibration, and solve the short-run production-network model forward. "
+    "Model & data: the "
     "[`maritime-choke`](https://pypi.org/project/maritime-choke/) package."
 )
 
