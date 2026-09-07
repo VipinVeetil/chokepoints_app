@@ -30,7 +30,7 @@ streamlit run streamlit_app.py
 ```
 
 On first launch the app downloads the ~90 MB benchmark cache from Zenodo
-(DOI [10.5281/zenodo.21263267](https://doi.org/10.5281/zenodo.21263267)) into a
+(DOI [10.5281/zenodo.22645051](https://doi.org/10.5281/zenodo.22645051)) into a
 per-user data directory, then reuses it for every solve. To point at a local
 cache instead, set `MARITIME_CHOKE_DATA` to a folder containing
 `model_cache_2019/`.
@@ -73,6 +73,6 @@ cache instead, set `MARITIME_CHOKE_DATA` to a folder containing
 ## Licence
 
 MIT (this UI code). The calibrated model inputs the app downloads from Zenodo
-(DOI [10.5281/zenodo.21263267](https://doi.org/10.5281/zenodo.21263267)) are
+(DOI [10.5281/zenodo.22645051](https://doi.org/10.5281/zenodo.22645051)) are
 CC BY 4.0. The proprietary primary sources they derive from (GTAP 10, OECD ICIO)
 are not redistributed and carry their own terms.
