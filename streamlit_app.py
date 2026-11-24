@@ -12,7 +12,7 @@ Companion to the paper "Macroeconomic Risks from Maritime Trade Disruptions"
 
 The model and its data are the published `maritime-choke` package
 (https://pypi.org/project/maritime-choke/): on first launch it downloads the
-~90 MB benchmark cache from Zenodo (DOI 10.5281/zenodo.21263267), then every
+~90 MB benchmark cache from Zenodo (DOI 10.5281/zenodo.21263266), then every
 solve reuses it in memory. This file only builds the UI — all the compute lives
 in `maritime_choke.solver_backend`.
 """
@@ -120,7 +120,8 @@ st.caption(
     "close any set of the 12 major shipping chokepoints, pick a (τ, ρ, ϱ, δ) "
     "calibration, and solve the short-run production-network model forward. "
     "Every solve prices a **complete closure sustained for a year**, crediting no "
-    "overland bypass. Eleven of the twelve gates are counterfactual; the Strait of "
+    "overland bypass. Only the seaborne part of each trade flow is exposed to a "
+    "closure. Eleven of the twelve gates are counterfactual; the Strait of "
     "Hormuz has been shut since 28 February 2026. "
     "Model & data: the "
     "[`maritime-choke`](https://pypi.org/project/maritime-choke/) package."
@@ -164,9 +165,10 @@ with st.sidebar:
 
     st.header("2 · Calibration")
     c1, c2 = st.columns(2)
-    tau = c1.number_input("τ · friction", 0.0, 1.0, 0.30, 0.05,
-                          help="Reallocation friction on displaced trade. "
-                               "Evidence-supported range [0.30, 0.40], centre ≈0.35.")
+    tau = c1.number_input("τ · unrecovered share", 0.0, 1.0, 0.30, 0.05,
+                          help="Share of displaced trade that finds no new partner within "
+                               "the year. The evidence does not pin it down; the paper sets "
+                               "0.3 and varies it over [0.1, 0.5].")
     rho = c2.number_input("ρ · inner CES", -4.0, -0.05, -1.0, 0.05,
                           help="Curvature across the sectoral input bundle. The paper's "
                                "effective short-run country-sector range is [−1, −0.25] — the "
@@ -178,15 +180,15 @@ with st.sidebar:
                                   "only at the harsh corner, whose documented range is [−4, −1].")
     st.caption(
         "Baseline (τ, ρ, ϱ, δ) = (0.3, −1, −1, 0.10). The paper's **calibration "
-        "rectangle** sweeps τ ∈ {0.2, 0.4, 0.5} and ρ ∈ [−1, −0.25] with ϱ held at "
+        "rectangle** runs over τ ∈ [0.2, 0.5] and ρ ∈ [−1, −0.25] with ϱ held at "
         "−1; δ ∈ [0.05, 0.15] for boxed cargo, [0.40, 0.55] for energy under attack. "
         "A closing **harsh-corner audit** releases ϱ and moves all four at once to "
-        "(0.5, −4, −4, 0.01), where Hormuz reaches 9.70%. Those deep-curvature cells "
+        "(0.5, −4, −4, 0.01), where Hormuz reaches 7.91%. Those deep-curvature cells "
         "were solved with damping 0.25 and tolerance 1e−10, neither of which this app "
         "exposes, so results near the corner will not match the paper exactly."
     )
 
-    energy = st.toggle("Energy-specific leakage (δ on B05/B06/C19)", value=False)
+    energy = st.toggle("Energy-specific residual transit (δ on B05/B06/C19)", value=False)
     st.caption(
         "Robustness reading only; the baseline applies one δ to every seaborne "
         "sector. Note the 2026 Hormuz closure severed energy *more* completely "
@@ -258,10 +260,10 @@ if 0 in summary.get("closed_indices", []):
         "(*app:hormuz_pipeline*) re-origins Saudi and Emirati crude onto the "
         "East–West and Habshan–Fujairah pipelines at the throughput the 2026 "
         "closure actually mobilized (share φ = 0.238 of the two economies' crude "
-        "sales at the gate), which roughly halves the world figure — 1.61% → 0.72% "
-        "at the baseline calibration — and every Gulf country loss with it. "
+        "sales at the gate), which halves the world figure — 2.83% → 1.42% "
+        "at the baseline calibration — and the Emirati and Saudi losses with it. "
         "Day-weighting the measured 2026 severance path instead of a full year "
-        "gives 0.77% uncredited and 0.34% credited. Neither reading is reachable "
+        "gives 1.44% uncredited and 0.73% credited. Neither reading is reachable "
         "from the controls above."
     )
 
