@@ -22,7 +22,8 @@ is only the Streamlit UI.
 
 ## Live app
 
-Deployed on Streamlit Community Cloud — see the link at the top of this repo.
+Deployed on Streamlit Community Cloud at
+[maritime-chokepoints.streamlit.app](https://maritime-chokepoints.streamlit.app).
 
 ## Run locally
 
